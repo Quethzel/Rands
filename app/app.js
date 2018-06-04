@@ -6,18 +6,18 @@ var App = angular.module('randsApp', [
 
 App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
     $stateProvider
-        // .state('home', {
-        //     url: '/home',
-        //     templateUrl: 'index.html',
-        //     controller: 'homeController'
-        // })
+        .state('home', {
+            url: '/home',
+            templateUrl: 'app/views/home.html',
+            controller: 'homeController'
+        })
         .state('about', {
             url: '/about',
             templateUrl: 'app/views/about.html',
             controller: 'aboutCtrl'
         })
 
-    // $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
 
 });
 
@@ -25,12 +25,12 @@ App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
 //    $rootScope.$state = $state;
 // });
 
-// App.controller('homeController', function ($scope, $rootScope, $routeParams, $location, $state) {
-//     // $scope.$on('$locationChangeStart', function(event) {
-//     //     $scope.showMenu = ($location.path() != "/exam") ? true : false;
-//     // });
-  
-// });
+App.controller('homeController', function ($scope, $rootScope, $routeParams, $location, $state) {
+    // $scope.$on('$locationChangeStart', function(event) {
+    //     $scope.showMenu = ($location.path() != "/exam") ? true : false;
+    // });
+    console.log("home");  
+});
 
 App.controller('aboutCtrl', function($scope, $state) {    
     $scope.version = {
