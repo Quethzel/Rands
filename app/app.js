@@ -11,6 +11,11 @@ App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
             templateUrl: 'app/views/home.html',
             controller: 'homeController'
         })
+        .state('promote', {
+            url: '/promote',
+            templateUrl: 'app/views/promote.html',
+            controller: 'promoteCtrl'
+        })        
         .state('about', {
             url: '/about',
             templateUrl: 'app/views/about.html',
@@ -31,6 +36,12 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
     // });
     console.log("home");  
 });
+
+
+App.controller('promoteCtrl', function($scope, $state) {
+    console.log('promote controller');
+});
+
 
 App.controller('aboutCtrl', function($scope, $state) {    
     $scope.version = {
