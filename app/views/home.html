@@ -51,13 +51,13 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="isbn" placeholder="ISBN" required="">
+                                                <input class="form-control" type="text" name="isbn" placeholder="ISBN *" required="">
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="title" placeholder="title" required="">
+                                                <input class="form-control" type="text" name="title" placeholder="title *" required="">
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="author" placeholder="author" required="">
+                                                <input class="form-control" type="text" name="author" placeholder="author *" required="">
                                             </div>
                                         </div>
                                     </div>
@@ -73,9 +73,20 @@
                                         <textarea class="form-control" name="message" placeholder="Message" rows="8"></textarea>
                                     </div>
                                     <div>
-                                        <p><a class="btn btn-sm btn-gray" href="#"><span>Share!</span></a></p>
+                                        <p><a class="btn btn-sm btn-gray" href="#" ng-click="genCode()"><span>Share!</span></a></p>
+                                        <p><button class="btn btn-sm btn-gray" ng-click="genCode()">Share!</button></p>
                                         <!-- <p><a class="btn btn-outline btn-sm btn-brand" href="#"><span>Share!</span></a></p> -->
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div id="tag" class="row tag-book">
+                                        <div id="qrCode"></div>
+                                        <div style="max-width: 100%; margin-left: 20px;">
+                                            <h2 class="page-title-heading">Read <span style="color:#ff0000;">&</span> Share</h2>
+                                            <h6 class="page-title-subheading"> Open Cross Bookstore</h6>
+                                        </div>
+                                    </div>
+                                    <div id="img-tag" style="width: 450px; height: 110px;"></div>
                                 </div>
                             </div>
                         </section>
