@@ -30,30 +30,6 @@ App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
 //    $rootScope.$state = $state;
 // });
 
-App.controller('homeController', function ($scope, $rootScope, $routeParams, $location, $state) {
-    // $scope.$on('$locationChangeStart', function(event) {
-    //     $scope.showMenu = ($location.path() != "/exam") ? true : false;
-    // });
-    console.log("home");  
-
-    $scope.genCode = function() {
-        jQuery('#qrCode').qrcode({
-            width: 80,
-            height: 80,
-            text: 'prueba de código QR generado'
-        });
-        
-        html2canvas(document.querySelector("#tag")).then(canvas => {
-            // jQuery('#tag').hide();
-            jQuery("#img-tag").append(canvas);
-            // document.body.appendChild(canvas)
-        });
-
-    };
-
-});
-
-
 App.controller('promoteCtrl', function($scope, $state) {
     console.log('promote controller');
 });
