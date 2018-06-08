@@ -7,6 +7,17 @@
     height: auto;
 }
 
+
+/* 
+    About 
+*/
+
+.card-header {
+    cursor: pointer;
+}
+.card-body {
+    text-align: justify;
+}
 .info-sys {
     width: 100%;
     font-family: monospace;
@@ -17,7 +28,6 @@
 .info-sys tr:hover {
     background-color: #151515;
     color: #fff;
-    cursor: pointer;
 }
 .info-sys td {
     padding-left: 10px;
