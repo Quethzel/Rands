@@ -37,9 +37,8 @@ App.controller('promoteCtrl', function($scope, $state) {
 
 App.controller('aboutCtrl', function($scope, $state) {    
     $scope.version = {
-        system: "1.2.1",
-        database: "4.0.0 firedb",
+        system: "1.0.1",
+        database: "4.0.0",
         date: "07.06.2017 11:53 p.m."
     };
-    console.log($scope.version);
 });

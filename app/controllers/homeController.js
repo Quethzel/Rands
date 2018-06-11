@@ -4,6 +4,7 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
         isbn: null,
         title: null,
         author: null,
+        messageFromSharer: null,
         qrCodeText: function() {
             return  this.isbn + this.title + this.author;
         }
@@ -12,10 +13,10 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
     $scope.dataUser = {
         email: null,
         name: null,
-        message: null
     };
 
     $scope.maxLenMessage = 280;
+    $scope.investBackgroundTagBook = false;
 
     $scope.genQRCode = function() {
         $('#qrCode').empty();
@@ -49,5 +50,11 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
           window.open(uri);
         }
     };
+
+    $scope.init = function() {
+        console.log('init ok');
+        fireJs.db.init();
+    };
+    $scope.init();
 
 });

@@ -14,23 +14,16 @@
                             Si lo que quieres es compartir un libro, dirigete a la sección de Sharers.</p>
                     </div>
                     <div class="tab-pane fade" id="pills-6">
-                        <p>Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy.</p>
+                        <p>Si estas aqui es porque alguien decidio compartir un libro contigo y quiso añadirle un toque de intriga.
+                            Ingresa el ID oculto en tu código QR para poder ver el mensaje oculto en el. 
+                        </p>
                         <section class="module module-dark">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="name" placeholder="Name" required="">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <input class="form-control" type="email" name="email" placeholder="E-mail" required="">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="phone" placeholder="Phone" required="">
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <textarea class="form-control" name="message" placeholder="Message" rows="5" required=""></textarea>
+                                                <input class="form-control" type="text" name="code" placeholder="Código" required="" focus>
                                             </div>
                                         </div>
                                     </div>
@@ -75,11 +68,21 @@
                                     <div>
                                         <p><button class="btn btn-sm btn-gray" ng-click="genQRCode()"><span>Share!</span></button></p>
                                         <!-- <p><a class="btn btn-outline btn-sm btn-brand" href="#"><span>Share!</span></a></p> -->
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <div class="checkbox checbox-switch switch-dark rsh-form-element">
+                                                    <label>
+                                                        <input type="checkbox" ng-model="investBackgroundTagBook" name=""/>
+                                                        <span></span>
+                                                        Invertir Colores
+                                                    </label>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <!-- QR -->
                                 <div class="row">
-                                    <div id="tag" class="row tag-book">
+                                    <div id="tag" class="row tag-book" ng-class="investBackgroundTagBook? 'tag-book-white' : 'tag-book'">
                                         <div id="qrCode"></div>
                                         <div style="max-width: 100%; margin-left: 20px;">
                                             <h2 class="page-title-heading">Read <span style="color:#ff0000;">&</span> Share</h2>
