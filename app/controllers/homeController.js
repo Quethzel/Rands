@@ -6,7 +6,7 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
         author: null,
         messageFromSharer: null,
         qrCodeText: function() {
-            return  this.isbn + this.title + this.author;
+            return 'http://iamquethzel.com';
         }
     };
 
@@ -18,13 +18,14 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
     $scope.maxLenMessage = 280;
     $scope.investBackgroundTagBook = false;
 
-    $scope.genQRCode = function() {
-        $('#qrCode').empty();
-        $('#qrCode').qrcode({
-            width: 120,
-            height: 120,
-            text: $scope.dataBook.qrCodeText()
-        });
+    function generateQR(textCode) {
+        var typeNumber = 4;
+        var errorCorrectionLevel = 'L';
+        var qr = qrcode(typeNumber, errorCorrectionLevel);
+        qr.addData(textCode);
+        qr.make();
+        document.getElementById('qrCode').innerHTML = qr.createImgTag();
+
         convertToPng($scope.dataBook.title);
     };
 
@@ -51,8 +52,13 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
         }
     };
 
+
+    $scope.share = function() {
+        // fireJs.saveDataBook($scope.dataBook);
+        generateQR($scope.dataBook.qrCodeText());
+    };
+
     $scope.init = function() {
-        console.log('init ok');
         fireJs.db.init();
     };
     $scope.init();

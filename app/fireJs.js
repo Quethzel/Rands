@@ -6,10 +6,7 @@ fireJs.db = {
     config: {
         apiKey: "AIzaSyBJXAMjGckeZs7gMKJM0iCBvHntHftFyrA",
         authDomain: "readandshare-d436f.firebaseapp.com",
-        // databaseURL: "https://readandshare-d436f.firebaseio.com",
         projectId: "readandshare-d436f"
-        // storageBucket: "readandshare-d436f.appspot.com",
-        // messagingSenderId: "357721799578"
     },
 
     init: function() {
