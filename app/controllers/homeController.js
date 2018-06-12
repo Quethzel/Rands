@@ -5,8 +5,8 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
         title: null,
         author: null,
         messageFromSharer: null,
-        qrCodeText: function() {
-            return 'http://iamquethzel.com';
+        qrCodeText: function(id) {
+            return 'http://iamquethzel.com/' + id;
         }
     };
 
@@ -54,8 +54,23 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
 
 
     $scope.share = function() {
-        // fireJs.saveDataBook($scope.dataBook);
-        generateQR($scope.dataBook.qrCodeText());
+        $scope.obj = angular.copy($scope.dataBook,$scope.obj);
+        delete $scope.obj.qrCodeText;
+
+        var deffBook = fireJs.db.saveDataBook($scope.obj);
+        deffBook.then(function(res) {
+            console.log(res);
+            generateQR($scope.dataBook.qrCodeText(res));
+        });
+
+
+        // fireJs.db.saveDataBook($scope.obj)
+        // .then(function(id) {
+        //     generateQR($scope.dataBook.qrCodeText(id));
+        // })
+        // .catch(function(error) {
+        //     console.log(error);
+        // });
     };
 
     $scope.init = function() {
