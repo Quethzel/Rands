@@ -6,7 +6,8 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
         author: null,
         messageFromSharer: null,
         qrCodeText: function(id) {
-            return 'http://iamquethzel.com/' + id;
+            // return 'http://iamquethzel.com/' + id;
+            return 'http://5519a888.ngrok.io/Rands/index.html#!/reader/' + id;
         }
     };
 
@@ -62,15 +63,6 @@ App.controller('homeController', function ($scope, $rootScope, $routeParams, $lo
             console.log(res);
             generateQR($scope.dataBook.qrCodeText(res));
         });
-
-
-        // fireJs.db.saveDataBook($scope.obj)
-        // .then(function(id) {
-        //     generateQR($scope.dataBook.qrCodeText(id));
-        // })
-        // .catch(function(error) {
-        //     console.log(error);
-        // });
     };
 
     $scope.init = function() {

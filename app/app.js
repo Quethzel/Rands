@@ -15,7 +15,13 @@ App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
             url: '/promote',
             templateUrl: 'app/views/promote.html',
             controller: 'promoteCtrl'
-        })        
+        })
+        .state('reader', {
+            url: '/reader/:id',
+            templateUrl: 'app/views/reader.html',
+            controller: 'readerController'
+        })
+
         .state('about', {
             url: '/about',
             templateUrl: 'app/views/about.html',

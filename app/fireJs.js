@@ -32,8 +32,23 @@ fireJs.db = {
         return this._save('book', data);
     },
 
-    getMessageBook: function() {
-        this.db.collection(collectionName).get().then(result)
+    _getDoc: function(collName, id) {
+        var deff = $.Deferred();
+        this.db.collection(collName).doc(id).get()
+        .then(function(docRef) {
+            deff.resolve(docRef.data());
+        })
+        .catch(function(error) {
+            deff.reject(error);
+        });
+        return deff.promise();
+    },
+
+    getBook: function(id) {
+        if(this.db == null) {
+            this.init();
+        }
+        return this._getDoc('book', id);
     }
 
     
