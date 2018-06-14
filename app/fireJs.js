@@ -10,8 +10,10 @@ fireJs.db = {
     },
 
     init: function() {
-        firebase.initializeApp(this.config);
-        this.db = firebase.firestore();
+        if(this.db == null) {
+            firebase.initializeApp(this.config);
+            this.db = firebase.firestore();
+        }
     },
 
     _save: function(collectionName, data) {
@@ -45,9 +47,6 @@ fireJs.db = {
     },
 
     getBook: function(id) {
-        if(this.db == null) {
-            this.init();
-        }
         return this._getDoc('book', id);
     }
 

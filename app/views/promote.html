@@ -3,86 +3,12 @@
         <div class="row">
             <div class="col-md-8 m-auto">
                 <div class="nav nav-pills nav-fill h6">
-                    <li class="nav-item"><a class="nav-link active" href="#pills-5" data-toggle="pill">¿Como funciona?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pills-6" data-toggle="pill">Readers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pills-7" data-toggle="pill">Sharers</a></li>
+                    <li class="nav-item"><a class="nav-link active" ui-sref="promote.reader({id:'hn7dLrd0K18FJgZgJ84l'})" href="#pills-6" data-toggle="pill">Readers</a></li>
+                    <li class="nav-item"><a class="nav-link" ui-sref="promote.sharer" href="#pills-7" data-toggle="pill">Sharers</a></li>
                 </div>
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="pills-5">
-                        <p>Existe 2 secciones principales. <a>Readers</a> y <a>Sharers</a>. 
-                            Si has encontrado un libro dirigete a la sección de Readers.
-                            Si lo que quieres es compartir un libro, dirigete a la sección de Sharers.</p>
-                    </div>
-                    <div class="tab-pane fade" id="pills-6">
-                        <p>Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy.</p>
-                        <section class="module module-dark">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="name" placeholder="Name" required="">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <input class="form-control" type="email" name="email" placeholder="E-mail" required="">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <input class="form-control" type="text" name="phone" placeholder="Phone" required="">
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <textarea class="form-control" name="message" placeholder="Message" rows="8" required=""></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>                        
-                    </div>
-                    <div class="tab-pane fade" id="pills-7">
-                        <p>Para compartit un libro, solo ingresa los datos de tu libro, imprime el código QR generado 
-                                y pegalo en la contraportada de tu libro.</p>
-                        <P>Listo, ahora solo dejalo en un lugar donde puedan encontrarlo. O si lo prefieres puedes enviarlo a nuestra dirección.
-                            Tambien puedes agregar algun mensaje para quien reciba tu libro y
-                            recibi una notificación cuando tu libro sea encontrado si agregasa tu email.
-                        </p>                    
-                        <section class="module module-dark">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="form-group col-md-4">
-                                                    <input class="form-control" type="text" name="isbn" placeholder="ISBN" required="">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <input class="form-control" type="text" name="title" placeholder="title" required="">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <input class="form-control" type="text" name="author" placeholder="author" required="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group col-md-4">
-                                            <input class="form-control" type="text" name="name" placeholder="Name">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <input class="form-control" type="text" name="email" placeholder="email">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <textarea class="form-control" name="message" placeholder="Message" rows="8"></textarea>
-                                        </div>
-                                        <div>
-                                            <p><a class="btn btn-sm btn-gray" href="#"><span>Share!</span></a></p>
-                                            <!-- <p><a class="btn btn-outline btn-sm btn-brand" href="#"><span>Share!</span></a></p> -->
-                                        </div>                                        
-                                    </div>
-                                </div>
-                            </section>                        
-                    </div>
-                    <div class="tab-pane fade" id="pills-8">
-                        <p>Started earnest brother believe an exposed so. Me he believing daughters if forfeited at furniture. Age again and stuff downs spoke. Late hour new nay able fat each sell. Nor themselves age introduced frequently use unsatiable devonshire get. They why quit gay cold rose deal park. One same they four did ask busy.</p>
-                    </div>
+                    <div ui-view="reader"></div>
+                    <div ui-view="sharer"></div>
                 </div>
             </div>
         </div>

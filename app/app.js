@@ -13,14 +13,27 @@ App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
         })
         .state('promote', {
             url: '/promote',
-            templateUrl: 'app/views/promote.html',
-            controller: 'promoteCtrl'
+            // abstract: true,
+            templateUrl: 'app/views/promote.html'
         })
-        .state('reader', {
-            url: '/reader/:id',
-            templateUrl: 'app/views/reader.html',
-            controller: 'readerController'
+        .state('promote.reader', {
+            url:'/reader/:id',
+            views: {
+                'reader': {
+                    templateUrl: 'app/views/reader.html',
+                    controller: 'readerController'
+                }
+            }
         })
+       .state('promote.sharer', {
+           url: '/sharer',
+           views: {
+                'sharer': {
+                    templateUrl: 'app/views/sharer.html',
+                    controller: 'sharerController'
+                }
+           }
+       })
 
         .state('about', {
             url: '/about',
