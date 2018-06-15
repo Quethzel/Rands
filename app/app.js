@@ -4,7 +4,7 @@ var App = angular.module('randsApp', [
     'ngSanitize'
 ]);
 
-App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
+App.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: '/home',
@@ -34,30 +34,25 @@ App.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
                 }
            }
        })
-
         .state('about', {
             url: '/about',
             templateUrl: 'app/views/about.html',
-            controller: 'aboutCtrl'
+            controller: 'aboutController'
         })
 
     $urlRouterProvider.otherwise('/home');
 
 });
 
-// App.run(function($state, $rootScope){
-//    $rootScope.$state = $state;
-// });
+App.run(function() {
+    fireJs.db.init();
 
-App.controller('promoteCtrl', function($scope, $state) {
-    console.log('promote controller');
 });
 
-
-App.controller('aboutCtrl', function($scope, $state) {    
+App.controller('aboutController', function($scope) { 
     $scope.version = {
         system: "1.0.1",
         database: "4.0.0",
-        date: "07.06.2017 11:53 p.m."
+        date: "14.06.2018 10:59 p.m."
     };
 });

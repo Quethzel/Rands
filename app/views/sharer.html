@@ -23,28 +23,28 @@
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-4">
+                <!-- <div class="form-group col-md-4">
                     <input class="form-control" type="text" name="name" placeholder="Name">
                 </div>
                 <div class="form-group col-md-4">
                     <input class="form-control" type="text" name="email" placeholder="email">
-                </div>
+                </div> -->
                 <div class="form-group col-md-12">
-                    <textarea class="form-control" name="message" ng-model="dataBook.messageFromSharer" placeholder="Message" rows="8" ng-maxlength="maxLenMessage"></textarea>
+                    <textarea class="form-control" name="message" ng-model="dataBook.sharedMessage" placeholder="Message" rows="8"></textarea>
                 </div>
                 <div>
-                    <p><button class="btn btn-sm btn-gray" ng-click="share()"><span>Share!</span></button></p>
-                    <!-- <p><a class="btn btn-outline btn-sm btn-brand" href="#"><span>Share!</span></a></p> -->
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="checkbox checbox-switch switch-dark rsh-form-element">
                                 <label>
                                     <input type="checkbox" ng-model="investBackgroundTagBook" name=""/>
                                     <span></span>
-                                    Invertir Colores
+                                    Invertir Colores de etiqueta
                                 </label>
                             </div>
                         </div>
+                    </div>
+                    <p><button class="btn btn-sm btn-gray" ng-click="share()"><span>Share!</span></button></p>
                 </div>
             </div>
             <!-- QR -->

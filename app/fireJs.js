@@ -20,27 +20,24 @@ fireJs.db = {
         var deff = $.Deferred();
         this.db.collection(collectionName).add(data)
         .then(function(docRef) {
-            console.log('document written with Id ', docRef.id);
             deff.resolve(docRef.id);
         })
-        .catch(function(error){
+        .catch(function(error) {
             console.log('Erron on try to save: ', error);
             deff.reject(error);
         });
         return deff.promise();
     },
 
-    saveDataBook: function(data) {
-        return this._save('book', data);
-    },
-
     _getDoc: function(collName, id) {
         var deff = $.Deferred();
         this.db.collection(collName).doc(id).get()
         .then(function(docRef) {
-            deff.resolve(docRef.data());
+            var book = docRef.data();
+            deff.resolve(book);
         })
         .catch(function(error) {
+            console.log('Error on try to get data book ', error);
             deff.reject(error);
         });
         return deff.promise();
@@ -48,7 +45,11 @@ fireJs.db = {
 
     getBook: function(id) {
         return this._getDoc('book', id);
-    }
+    },
+
+    saveDataBook: function(data) {
+        return this._save('book', data);
+    }    
 
     
 }

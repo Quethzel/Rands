@@ -1,6 +1,6 @@
 <div class="tab-pane fade show active" id="pills-6">
-    <p>Si estas aqui es porque alguien decidio compartir un libro contigo y quiso añadirle un toque de intriga.
-        Ingresa el ID oculto en tu código QR para poder ver el mensaje oculto en el. 
+    <p>Si estas aqui es porque alguien decidio compartir un libro contigo y quiso añadirle un toque de intriga y misterio.
+        Ingresa el código que se encuentra en la etiqueta <span style="color: #fff">Read</span> <span style="color:#ff0000">&</span> <span style="color: #fff">Share</span> o lee su código QR para poder ver el mensaje oculto en el. 
     </p>
     <section class="module module-dark">
         <div class="container">
@@ -8,7 +8,11 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <input class="form-control" type="text" name="code" placeholder="Código" required="" focus>
+                            <input class="form-control" type="text" name="code" ng-model="code" placeholder="Código" required="" focus>
+                            <p><button class="btn btn-sm btn-gray" ng-click="getBook(code)"><span>Mostrar mensaje!</span></button></p>
+                        </div>
+                        <div class="form-group col-md-12" ng-show="hasBeenDecrypted">
+                            <blockquote><p>{{message}}</p></blockquote>
                         </div>
                     </div>
                 </div>
