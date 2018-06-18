@@ -1,6 +1,12 @@
 p {
     text-align: justify;
 }
+.rs-quote {
+    font-family: 'Roboto Slab', serif;
+}
+.rs-quote span {
+    font-size: 2em;
+}
 .tag-book {
     border:1px solid #242424;
     background: #000;

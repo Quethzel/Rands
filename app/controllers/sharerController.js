@@ -8,7 +8,7 @@ App.controller('sharerController', [ '$scope', function ($scope) {
         author: null,
         sharedMessage: null,
         qrCodeText: function(id) {
-            // return 'http://iamquethzel.com/' + id;
+            // return 'http://iamquethzel.com/Rands/index.html#!/promote/reader/' + id;
             return 'http://05b53ba5.ngrok.io/Rands/index.html#!/promote/reader/' + id;
         }
     };
