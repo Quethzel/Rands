@@ -3,13 +3,10 @@ App.controller('sharerController', [ '$scope', function ($scope) {
     $scope.investBackgroundTagBook = false;
     
     $scope.dataBook = {
-        isbn: null,
-        title: null,
         author: null,
         sharedMessage: null,
         qrCodeText: function(id) {
-            // return 'http://iamquethzel.com/Rands/index.html#!/promote/reader/' + id;
-            return 'http://05b53ba5.ngrok.io/Rands/index.html#!/promote/reader/' + id;
+            return 'http://iamquethzel.com/Rands/index.html#!/promote/reader/' + id;
         }
     };
     
@@ -26,7 +23,7 @@ App.controller('sharerController', [ '$scope', function ($scope) {
         qr.make();
         document.getElementById('qrCode').innerHTML = qr.createImgTag();
 
-        convertToPng($scope.dataBook.title);
+        convertToPng($scope.dataBook.author);
     };
 
     function convertToPng(imgName) {
@@ -52,6 +49,7 @@ App.controller('sharerController', [ '$scope', function ($scope) {
     };
 
     $scope.share = function() {
+        $scope.dataBook.author = $scope.dataBook.author == null ? 'Unknown' : $scope.dataBook.author ;
         $scope.obj = angular.copy($scope.dataBook,$scope.obj);
         delete $scope.obj.qrCodeText;
 
